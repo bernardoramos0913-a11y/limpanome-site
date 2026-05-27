@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serasa Limpa Nome – Negocie com até 99% de desconto</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Serasa brand palette */
+    --blue:        #e80070;
+    --blue-dark:   #c4005f;
+    --blue-light:  #fff0f7;
+    --magenta:     #e80070;
+    --magenta-dark:#c4005f;
+    --magenta-light:#fff0f7;
+    --green:       #00b050;   /* "nome limpo" green */
+    --green-light: #e6f7ee;
+    --yellow:      #FFD600;
+    --gray-bg:     #f5f7fa;
+    --gray-border: #dde3ed;
+    --gray-text:   #5a6475;
+    --text-dark:   #12233f;
+    --white:       #ffffff;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Nunito Sans',sans-serif; color:var(--text-dark); background:var(--white); overflow-x:hidden; }
+
+  /* ── HEADER ── */
+  header {
+    background:var(--blue-dark);
+    padding:0 32px;
+    height:66px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 16px rgba(0,0,0,0.22);
+  }
+
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+
+  .logo-icon {
+    width:36px; height:36px;
+    background:var(--magenta);
+    border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .logo-icon svg { width:20px; height:20px; }
+
+  .logo-text {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:18px;
+    color:var(--white);
+    line-height:1;
+    letter-spacing:-.3px;
+  }
+  .logo-text span { color:var(--magenta); }
+
+  .header-actions { display:flex; gap:10px; align-items:center; }
+
+  .btn-ghost {
+    border:2px solid rgba(255,255,255,0.4);
+    color:var(--white);
+    background:transparent;
+    padding:8px 20px;
+    border-radius:24px;
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .btn-ghost:hover { border-color:var(--white); background:rgba(255,255,255,0.1); }
+
+  .btn-magenta {
+    background:var(--magenta);
+    color:var(--white);
+    border:none;
+    padding:10px 24px;
+    border-radius:24px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    cursor:pointer;
+    transition:all .2s;
+    box-shadow:0 4px 14px rgba(232,0,112,0.35);
+  }
+  .btn-magenta:hover { background:var(--magenta-dark); transform:translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background:linear-gradient(140deg, var(--blue-dark) 0%, var(--blue) 55%, #2055a8 100%);
+    padding:68px 24px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    min-height:560px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* decorative circles */
+  .hero::before {
+    content:'';
+    position:absolute;
+    width:500px; height:500px;
+    background:radial-gradient(circle, rgba(232,0,112,0.18) 0%, transparent 70%);
+    top:-80px; right:-60px;
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .hero::after {
+    content:'';
+    position:absolute;
+    width:320px; height:320px;
+    background:radial-gradient(circle, rgba(0,176,80,0.12) 0%, transparent 70%);
+    bottom:60px; left:-40px;
+    border-radius:50%;
+    pointer-events:none;
+  }
+
+  .hero-badge {
+    background:var(--yellow);
+    color:var(--blue-dark);
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:12px;
+    padding:6px 18px;
+    border-radius:20px;
+    display:inline-block;
+    margin-bottom:26px;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    animation:popIn .5s ease both;
+  }
+  @keyframes popIn { from{transform:scale(.8);opacity:0} to{transform:scale(1);opacity:1} }
+
+  .hero h1 {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:clamp(28px,5vw,54px);
+    color:var(--white);
+    line-height:1.1;
+    max-width:680px;
+    margin-bottom:20px;
+    animation:fadeUp .55s ease .1s both;
+  }
+  .hero h1 em { color:var(--magenta); font-style:normal; }
+
+  .hero p {
+    font-size:clamp(15px,2vw,18px);
+    color:rgba(255,255,255,0.82);
+    max-width:520px;
+    margin-bottom:36px;
+    line-height:1.65;
+    animation:fadeUp .55s ease .2s both;
+  }
+
+  @keyframes fadeUp { from{transform:translateY(22px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+  .hero-cta { animation:fadeUp .55s ease .3s both; margin-bottom:48px; }
+
+  .btn-cta {
+    background:var(--magenta);
+    color:var(--white);
+    border:none;
+    padding:18px 52px;
+    border-radius:34px;
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(232,0,112,0.45);
+    transition:all .25s;
+    display:inline-block;
+    text-decoration:none;
+    letter-spacing:-.2px;
+  }
+  .btn-cta:hover { background:var(--magenta-dark); transform:translateY(-3px); box-shadow:0 16px 36px rgba(232,0,112,0.5); }
+
+  .hero-sub {
+    font-size:13px;
+    color:rgba(255,255,255,0.55);
+    margin-top:14px;
+    animation:fadeUp .55s ease .4s both;
+  }
+
+  .hero-stats {
+    display:flex;
+    background:rgba(255,255,255,0.07);
+    border-radius:18px 18px 0 0;
+    border:1px solid rgba(255,255,255,0.13);
+    border-bottom:none;
+    backdrop-filter:blur(10px);
+    margin-top:20px;
+    animation:fadeUp .55s ease .45s both;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+  }
+
+  .stat {
+    padding:26px 38px;
+    text-align:center;
+    flex:1;
+    border-right:1px solid rgba(255,255,255,0.1);
+  }
+  .stat:last-child { border-right:none; }
+
+  .stat-number {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:30px;
+    color:var(--magenta);
+    display:block;
+  }
+  .stat-label { font-size:12px; color:rgba(255,255,255,0.65); margin-top:4px; line-height:1.35; }
+
+  /* ── COMO FUNCIONA ── */
+  .section { padding:80px 24px; max-width:1100px; margin:0 auto; }
+
+  .section-tag {
+    display:block;
+    text-align:center;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--magenta);
+    margin-bottom:14px;
+  }
+
+  .section-title {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:clamp(22px,3.5vw,36px);
+    color:var(--text-dark);
+    text-align:center;
+    margin-bottom:48px;
+    line-height:1.15;
+  }
+  .section-title span { color:var(--blue); }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; }
+
+  .step-card {
+    background:var(--white);
+    border:1.5px solid var(--gray-border);
+    border-radius:20px;
+    padding:36px 26px;
+    text-align:center;
+    position:relative;
+    transition:all .25s;
+    box-shadow:0 2px 12px rgba(232,0,112,0.06);
+  }
+  .step-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 14px 36px rgba(232,0,112,0.13);
+    border-color:var(--blue);
+  }
+
+  .step-number {
+    width:50px; height:50px;
+    background:var(--blue);
+    color:var(--white);
+    border-radius:50%;
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:22px;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 18px;
+  }
+
+  .step-icon { font-size:38px; margin-bottom:14px; display:block; }
+
+  .step-card h3 {
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:16px;
+    margin-bottom:10px;
+    color:var(--text-dark);
+  }
+  .step-card p { font-size:14px; color:var(--gray-text); line-height:1.55; }
+
+  /* ── BENEFÍCIOS ── */
+  .benefits-section { background:var(--blue); padding:80px 24px; }
+  .benefits-inner { max-width:1100px; margin:0 auto; }
+  .benefits-section .section-tag { color:var(--magenta); }
+  .benefits-section .section-title { color:var(--white); }
+  .benefits-section .section-title span { color:var(--magenta); }
+
+  .benefits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+
+  .benefit-card {
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.13);
+    border-radius:18px;
+    padding:28px 24px;
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    transition:background .2s;
+  }
+  .benefit-card:hover { background:rgba(255,255,255,0.13); }
+
+  .benefit-icon {
+    width:48px; height:48px;
+    background:var(--magenta);
+    border-radius:13px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    flex-shrink:0;
+    box-shadow:0 4px 14px rgba(232,0,112,0.3);
+  }
+
+  .benefit-card h4 {
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:15px;
+    color:var(--white);
+    margin-bottom:6px;
+  }
+  .benefit-card p { font-size:13px; color:rgba(255,255,255,0.68); line-height:1.55; }
+
+  /* ── DEPOIMENTOS ── */
+  .testimonials-section { background:var(--gray-bg); padding:80px 24px; }
+  .testimonials-inner { max-width:1100px; margin:0 auto; }
+  .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+
+  .testimonial-card {
+    background:var(--white);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 4px 20px rgba(232,0,112,0.08);
+    position:relative;
+    border-top:3px solid var(--magenta);
+  }
+
+  .testimonial-card::before {
+    content:'"';
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:80px;
+    color:var(--magenta);
+    position:absolute;
+    top:4px; left:18px;
+    line-height:1;
+    opacity:.18;
+  }
+
+  .testimonial-text {
+    font-size:14px;
+    line-height:1.65;
+    color:var(--gray-text);
+    margin-bottom:22px;
+    padding-top:18px;
+  }
+
+  .testimonial-author { display:flex; align-items:center; gap:12px; }
+
+  .author-avatar {
+    width:44px; height:44px;
+    border-radius:50%;
+    font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900;
+    font-family:'Nunito',sans-serif;
+    flex-shrink:0;
+  }
+
+  .author-name { font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; color:var(--text-dark); }
+  .author-discount { font-size:12px; color:var(--green); font-weight:700; }
+  .stars { color:#FFB800; font-size:13px; margin-bottom:3px; }
+
+  /* ── PARCEIROS ── */
+  .partners-section { padding:60px 24px; max-width:1100px; margin:0 auto; text-align:center; }
+  .partners-label {
+    font-size:12px;
+    color:var(--gray-text);
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:30px;
+  }
+
+  .partners-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+
+  .partner-pill {
+    background:var(--gray-bg);
+    border:1.5px solid var(--gray-border);
+    border-radius:40px;
+    padding:10px 22px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:13px;
+    color:var(--blue);
+    transition:all .2s;
+    cursor:default;
+  }
+  .partner-pill:hover { border-color:var(--blue); background:var(--white); box-shadow:0 2px 10px rgba(232,0,112,0.1); }
+
+  /* ── CTA FINAL ── */
+  .cta-section {
+    background:linear-gradient(135deg, var(--magenta-light) 0%, #ffe0ee 100%);
+    border-top:3px solid var(--magenta);
+    padding:80px 24px;
+    text-align:center;
+  }
+
+  .cta-section h2 {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:clamp(24px,4vw,40px);
+    color:var(--blue-dark);
+    margin-bottom:16px;
+    line-height:1.15;
+  }
+  .cta-section h2 em { color:var(--magenta); font-style:normal; }
+
+  .cta-section p {
+    font-size:16px;
+    color:var(--gray-text);
+    margin-bottom:36px;
+    max-width:480px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.6;
+  }
+
+  .cta-channels { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:32px; }
+
+  .channel-btn {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--white);
+    border:2px solid var(--blue);
+    border-radius:14px;
+    padding:14px 24px;
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    color:var(--blue);
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .channel-btn:hover { background:var(--blue); color:var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--blue-dark);
+    padding:52px 24px 32px;
+    color:rgba(255,255,255,0.55);
+    font-size:12px;
+    text-align:center;
+  }
+
+  .footer-logo {
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    font-size:22px;
+    color:var(--white);
+    margin-bottom:10px;
+  }
+  .footer-logo span { color:var(--magenta); }
+
+  .footer-links { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin:20px 0; }
+  .footer-links a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:13px; transition:color .2s; }
+  .footer-links a:hover { color:var(--white); }
+
+  .footer-divider { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:24px 0 16px; }
+
+  /* ── BADGE VERDE ── */
+  .tag-green-pill {
+    display:inline-block;
+    background:var(--green-light);
+    color:var(--green);
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:12px;
+    padding:5px 14px;
+    border-radius:20px;
+    border:1px solid #b6eed0;
+    margin-bottom:14px;
+    letter-spacing:.4px;
+  }
+
+  @media (max-width:620px) {
+    .hero-stats { flex-direction:column; }
+    .stat { border-right:none; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .stat:last-child { border-bottom:none; }
+    .header-actions .btn-ghost { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">
+    <div class="logo-icon">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 1.5L2.5 5.5V10C2.5 14 5.5 17.7 10 19C14.5 17.7 17.5 14 17.5 10V5.5L10 1.5Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.4"/>
+        <path d="M6.5 10L9 12.5L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">Serasa <span>Limpa Nome</span></div>
+  </a>
+  <div class="header-actions">
+    <button class="btn-ghost">Entrar</button>
+    <button class="btn-magenta">Consultar CPF</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🎉 Feirão 2026 — Até 99% de Desconto</div>
+  <h1>Limpe seu nome com até <em>99% de desconto</em> nas suas dívidas</h1>
+  <p>Mais de 2.200 empresas parceiras. Negocie online, pelo celular ou WhatsApp — rápido, seguro e gratuito.</p>
+  <div class="hero-cta">
+    <a href="#" class="btn-cta">Consultar meu CPF gratuitamente</a>
+    <div class="hero-sub">Não é necessário cartão de crédito &nbsp;·&nbsp; 100% seguro</div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-number">99%</span>
+      <span class="stat-label">Desconto máximo disponível</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">2.200+</span>
+      <span class="stat-label">Empresas parceiras</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">79M</span>
+      <span class="stat-label">Brasileiros atendidos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">R$9,90</span>
+      <span class="stat-label">Parcelas a partir de</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<div class="section">
+  <span class="section-tag">Simples e rápido</span>
+  <h2 class="section-title">Como funciona em <span>3 passos</span></h2>
+  <div class="steps">
+    <div class="step-card">
+      <span class="step-icon">🔍</span>
+      <div class="step-number">1</div>
+      <h3>Consulte seu CPF</h3>
+      <p>Encontre todas as dívidas vinculadas ao seu CPF de forma gratuita e sem compromisso.</p>
+    </div>
+    <div class="step-card">
+      <span class="step-icon">💬</span>
+      <div class="step-number">2</div>
+      <h3>Escolha a melhor oferta</h3>
+      <p>Veja as condições disponíveis para cada dívida e escolha o desconto ou parcelamento ideal.</p>
+    </div>
+    <div class="step-card">
+      <span class="step-icon">✅</span>
+      <div class="step-number">3</div>
+      <h3>Pague e limpe o nome</h3>
+      <p>Pague via Pix ou boleto. Seu nome fica limpo em até 5 dias úteis após a primeira parcela.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFÍCIOS -->
+<section class="benefits-section">
+  <div class="benefits-inner">
+    <span class="section-tag">Por que negociar aqui</span>
+    <h2 class="section-title">Vantagens que só a <span>Serasa</span> oferece</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🏷️</div>
+        <div>
+          <h4>Até 99% de desconto</h4>
+          <p>Descontos exclusivos no Feirão que você não encontra negociando diretamente com o credor.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📱</div>
+        <div>
+          <h4>100% online ou pelo WhatsApp</h4>
+          <p>Resolva tudo pelo celular, site ou WhatsApp — sem filas, sem burocracia.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💳</div>
+        <div>
+          <h4>Parcele em até 72x</h4>
+          <p>Condições flexíveis de parcelamento para caber no seu bolso, com parcelas a partir de R$9,90.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔒</div>
+        <div>
+          <h4>Seguro e gratuito</h4>
+          <p>Plataforma oficial. Consultar seu CPF e negociar não tem custo algum para você.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <div>
+          <h4>Nome limpo rapidinho</h4>
+          <p>Após o pagamento da primeira parcela, seu nome é retirado dos cadastros em até 5 dias úteis.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏦</div>
+        <div>
+          <h4>+2.200 empresas parceiras</h4>
+          <p>Bancos, financeiras, operadoras, varejo, energia e muito mais — tudo em um só lugar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <span class="section-tag" style="color:var(--magenta)">Quem já negociou</span>
+    <h2 class="section-title">Histórias de quem <span>recomeçou</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">Minha dívida estava em R$ 25 mil. Com 99% de desconto, quitei tudo por apenas R$ 98. Agora posso ser um cidadão com o nome limpo e isso é gratificante!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#e3ecfa;color:#e80070;">M</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">Marcos A.</div>
+            <div class="author-discount">Economizou R$ 24.902</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Tive mais de 90% de desconto em dívidas que chegavam a quase R$ 90 mil. Por questões de saúde fiquei impossibilitada de pagar, mas recuperei minha dignidade!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#ffeef6;color:#e80070;">C</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">Cláudia R.</div>
+            <div class="author-discount">Economizou mais de R$ 81.000</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Eu tinha uma dívida de R$ 8.200 e paguei R$ 197. Com o nome limpo estou seguindo minha vida mais feliz, alegre e tranquilo.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#e6f7ee;color:#00b050;">J</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="author-name">João P.</div>
+            <div class="author-discount">Economizou R$ 8.003</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCEIROS -->
+<section class="partners-section">
+  <p class="partners-label">Algumas das empresas parceiras</p>
+  <div class="partners-row">
+    <div class="partner-pill">Bradesco</div>
+    <div class="partner-pill">Santander</div>
+    <div class="partner-pill">Itaú</div>
+    <div class="partner-pill">Claro</div>
+    <div class="partner-pill">Vivo</div>
+    <div class="partner-pill">Tim</div>
+    <div class="partner-pill">Americanas</div>
+    <div class="partner-pill">Casas Bahia</div>
+    <div class="partner-pill">BV Financeira</div>
+    <div class="partner-pill">Unopar</div>
+    <div class="partner-pill">Energisa</div>
+    <div class="partner-pill">+2.190 outros</div>
+  </div>
+</section>
+
+<!-- NEGOCIAÇÃO -->
+<section id="negociar" class="negociar-section">
+  <div class="negociar-inner">
+    <span class="section-tag" style="color:var(--magenta)">Negocie agora</span>
+    <h2 class="section-title">Consulte e negocie sua <span>dívida</span></h2>
+
+    <!-- STEPS NAV -->
+    <div class="neg-steps-nav">
+      <div class="neg-step-item active" id="nav1">
+        <div class="neg-step-circle">1</div>
+        <span>Identificação</span>
+      </div>
+      <div class="neg-step-divider"></div>
+      <div class="neg-step-item" id="nav2">
+        <div class="neg-step-circle">2</div>
+        <span>Suas dívidas</span>
+      </div>
+      <div class="neg-step-divider"></div>
+      <div class="neg-step-item" id="nav3">
+        <div class="neg-step-circle">3</div>
+        <span>Proposta</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: CPF -->
+    <div class="neg-card" id="step1">
+      <div class="neg-card-icon">🔍</div>
+      <h3>Informe seu CPF para consultar</h3>
+      <p>Seus dados são protegidos. A consulta é gratuita e não compromete seu score.</p>
+      <div class="neg-form">
+        <div class="neg-field">
+          <label>Nome completo</label>
+          <input type="text" id="inp-nome" placeholder="Ex: João da Silva" />
+        </div>
+        <div class="neg-field">
+          <label>CPF</label>
+          <input type="text" id="inp-cpf" placeholder="000.000.000-00" maxlength="14" />
+        </div>
+        <button class="btn-cta" style="width:100%;margin-top:8px;font-size:16px;" onclick="goStep2()">
+          Consultar minhas dívidas →
+        </button>
+      </div>
+      <p class="neg-safe">🔒 Seus dados são criptografados e protegidos</p>
+    </div>
+
+    <!-- STEP 2: DÍVIDAS -->
+    <div class="neg-card" id="step2" style="display:none">
+      <div class="neg-card-icon">📋</div>
+      <h3>Dívidas encontradas para <span id="show-nome" style="color:var(--magenta)"></span></h3>
+      <p>Selecione a dívida que deseja negociar:</p>
+      <div class="dividas-list">
+        <div class="divida-item" onclick="selectDivida(this, 'Banco Bradesco', 'R$ 4.832,00')">
+          <div class="divida-logo" style="background:#e3ecfa;color:#e80070;">🏦</div>
+          <div class="divida-info">
+            <div class="divida-credor">Banco Bradesco</div>
+            <div class="divida-valor-orig">Valor original: <strong>R$ 4.832,00</strong></div>
+            <div class="divida-tag">Cartão de crédito · Em atraso há 14 meses</div>
+          </div>
+          <div class="divida-check">○</div>
+        </div>
+        <div class="divida-item" onclick="selectDivida(this, 'Claro S.A.', 'R$ 1.247,80')">
+          <div class="divida-logo" style="background:#ffeef6;color:#e80070;">📡</div>
+          <div class="divida-info">
+            <div class="divida-credor">Claro S.A.</div>
+            <div class="divida-valor-orig">Valor original: <strong>R$ 1.247,80</strong></div>
+            <div class="divida-tag">Serviços de telefonia · Em atraso há 8 meses</div>
+          </div>
+          <div class="divida-check">○</div>
+        </div>
+        <div class="divida-item" onclick="selectDivida(this, 'Casas Bahia', 'R$ 2.090,50')">
+          <div class="divida-logo" style="background:#e6f7ee;color:#00b050;">🛒</div>
+          <div class="divida-info">
+            <div class="divida-credor">Casas Bahia</div>
+            <div class="divida-valor-orig">Valor original: <strong>R$ 2.090,50</strong></div>
+            <div class="divida-tag">Crediário · Em atraso há 22 meses</div>
+          </div>
+          <div class="divida-check">○</div>
+        </div>
+      </div>
+      <button class="btn-cta" style="width:100%;margin-top:20px;font-size:16px;opacity:.4;cursor:not-allowed" id="btn-ver-proposta" disabled onclick="goStep3()">
+        Ver proposta de negociação →
+      </button>
+      <button class="neg-back" onclick="goStep1()">← Voltar</button>
+    </div>
+
+    <!-- STEP 3: PROPOSTA -->
+    <div class="neg-card" id="step3" style="display:none">
+      <div class="neg-card-icon">🎉</div>
+      <h3>Proposta especial para você!</h3>
+
+      <div class="proposta-box">
+        <div class="proposta-credor" id="prop-credor"></div>
+        <div class="proposta-row">
+          <span>Valor original</span>
+          <span id="prop-original" style="text-decoration:line-through;color:var(--gray-text)"></span>
+        </div>
+        <div class="proposta-divider"></div>
+        <div class="proposta-row desconto-row">
+          <span>🏷️ Desconto especial</span>
+          <span id="prop-desconto" style="color:var(--magenta);font-weight:900"></span>
+        </div>
+        <div class="proposta-divider"></div>
+        <div class="proposta-row total-row">
+          <span>✅ Valor final negociado</span>
+          <span id="prop-final" style="color:var(--green);font-size:28px;font-weight:900"></span>
+        </div>
+        <div class="proposta-parcelas">ou em até <strong>6x de R$ 25,00</strong> sem juros</div>
+      </div>
+
+      <div class="proposta-aviso">
+        <span>⚠️</span>
+        <span>Oferta válida por <strong>24 horas</strong>. Após o pagamento, seu nome é limpo em até 5 dias úteis.</span>
+      </div>
+
+      <button class="btn-cta" style="width:100%;font-size:17px;margin-top:8px;" onclick="abrirPagamento()">
+        🔒 Aceitar proposta e pagar agora
+      </button>
+      <button class="neg-back" onclick="goStep2()">← Escolher outra dívida</button>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.negociar-section {
+  background: linear-gradient(180deg, var(--gray-bg) 0%, var(--white) 100%);
+  padding: 80px 24px;
+  border-top: 3px solid var(--blue);
+}
+.negociar-inner { max-width: 640px; margin: 0 auto; }
+
+/* steps nav */
+.neg-steps-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 40px;
+}
+.neg-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--gray-text);
+  min-width: 80px;
+}
+.neg-step-item.active { color: var(--blue); }
+.neg-step-item.done { color: var(--green); }
+.neg-step-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-border);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--gray-text);
+  transition: all .3s;
+}
+.neg-step-item.active .neg-step-circle {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
+}
+.neg-step-item.done .neg-step-circle {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--white);
+}
+.neg-step-divider {
+  flex: 1;
+  height: 2px;
+  background: var(--gray-border);
+  max-width: 60px;
+  margin-bottom: 18px;
+}
+
+/* card */
+.neg-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-border);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 40px rgba(232,0,112,0.1);
+  animation: fadeUp .4s ease both;
+}
+.neg-card-icon { font-size: 48px; margin-bottom: 14px; }
+.neg-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.neg-card > p {
+  color: var(--gray-text);
+  font-size: 14px;
+  margin-bottom: 28px;
+  line-height: 1.55;
+}
+
+/* form */
+.neg-form { display: flex; flex-direction: column; gap: 16px; }
+.neg-field { display: flex; flex-direction: column; gap: 6px; }
+.neg-field label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-dark);
+}
+.neg-field input {
+  padding: 14px 16px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: 12px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  transition: border-color .2s;
+  outline: none;
+}
+.neg-field input:focus { border-color: var(--blue); }
+.neg-safe {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray-text);
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+}
+
+/* dívidas */
+.dividas-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.divida-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid var(--gray-border);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.divida-item:hover { border-color: var(--blue); background: #f0f5ff; }
+.divida-item.selected { border-color: var(--magenta); background: var(--magenta-light); }
+.divida-logo {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.divida-credor { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; }
+.divida-valor-orig { font-size: 13px; color: var(--gray-text); margin-top: 2px; }
+.divida-tag {
+  font-size: 11px;
+  color: var(--magenta);
+  background: var(--magenta-light);
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: 700;
+}
+.divida-info { flex: 1; }
+.divida-check {
+  font-size: 22px;
+  color: var(--gray-border);
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.divida-item.selected .divida-check { color: var(--magenta); }
+
+/* proposta */
+.proposta-box {
+  background: var(--gray-bg);
+  border-radius: 18px;
+  padding: 28px;
+  margin: 20px 0;
+  border: 1.5px solid var(--gray-border);
+}
+.proposta-credor {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--blue);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--gray-border);
+}
+.proposta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 0;
+  font-weight: 600;
+}
+.desconto-row { font-size: 15px; }
+.total-row { font-size: 16px; font-weight: 800; }
+.proposta-divider { height: 1px; background: var(--gray-border); }
+.proposta-parcelas {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray-text);
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--gray-border);
+}
+.proposta-aviso {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #5d4037;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.neg-back {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px;
+}
+.neg-back:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  .neg-card { padding: 28px 20px; }
+}
+</style>
+
+<script>
+function maskCPF(v) {
+  v = v.replace(/\D/g,'');
+  if(v.length<=3) return v;
+  if(v.length<=6) return v.slice(0,3)+'.'+v.slice(3);
+  if(v.length<=9) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6);
+  return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6,9)+'-'+v.slice(9,11);
+}
+document.getElementById('inp-cpf').addEventListener('input', function(){
+  this.value = maskCPF(this.value);
+});
+
+function setNav(step) {
+  [1,2,3].forEach(i => {
+    const el = document.getElementById('nav'+i);
+    el.classList.remove('active','done');
+    if(i < step) el.classList.add('done'), el.querySelector('.neg-step-circle').textContent = '✓';
+    else if(i === step) el.classList.add('active'), el.querySelector('.neg-step-circle').textContent = i;
+    else el.querySelector('.neg-step-circle').textContent = i;
+  });
+}
+
+function goStep1() {
+  document.getElementById('step1').style.display='';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step3').style.display='none';
+  setNav(1);
+}
+
+function goStep2() {
+  const nome = document.getElementById('inp-nome').value.trim();
+  const cpf  = document.getElementById('inp-cpf').value.trim();
+  if(!nome || cpf.length < 14) { alert('Por favor, preencha nome e CPF corretamente.'); return; }
+  document.getElementById('show-nome').textContent = nome.split(' ')[0];
+  document.getElementById('step1').style.display='none';
+  document.getElementById('step2').style.display='';
+  document.getElementById('step3').style.display='none';
+  setNav(2);
+  // reset selection
+  document.querySelectorAll('.divida-item').forEach(el => {
+    el.classList.remove('selected');
+    el.querySelector('.divida-check').textContent = '○';
+  });
+  const btn = document.getElementById('btn-ver-proposta');
+  btn.style.opacity = '.4'; btn.style.cursor = 'not-allowed'; btn.disabled = true;
+}
+
+let selectedCredor = '', selectedOriginal = '', valorNegociado = 150.00;
+function selectDivida(el, credor, valor) {
+  document.querySelectorAll('.divida-item').forEach(d => {
+    d.classList.remove('selected');
+    d.querySelector('.divida-check').textContent = '○';
+  });
+  el.classList.add('selected');
+  el.querySelector('.divida-check').textContent = '●';
+  selectedCredor = credor;
+  selectedOriginal = valor;
+  const btn = document.getElementById('btn-ver-proposta');
+  btn.style.opacity = '1'; btn.style.cursor = 'pointer'; btn.disabled = false;
+}
+
+function goStep3() {
+  if(!selectedCredor) return;
+  // calcular desconto fictício entre 85-97%
+  const origNum = parseFloat(selectedOriginal.replace('R$ ','').replace('.','').replace(',','.'));
+  const descPct = Math.floor(Math.random() * 13) + 85;
+  const final = (origNum * (1 - descPct/100)).toFixed(2).replace('.',',');
+  const economia = (origNum - parseFloat(final.replace(',','.'))).toFixed(2).replace('.',',');
+
+  document.getElementById('prop-credor').textContent = '🏦 ' + selectedCredor;
+  document.getElementById('prop-original').textContent = selectedOriginal;
+  document.getElementById('prop-desconto').textContent = '-' + descPct + '% (economize R$ ' + economia + ')';
+  document.getElementById('prop-final').textContent = 'R$ ' + final;
+  valorNegociado = parseFloat(final.replace(',','.'));
+
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step3').style.display='';
+  setNav(3);
+}
+</script>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2>Comece agora e limpe seu nome<br><em>ainda hoje</em></h2>
+  <p>É gratuito, seguro e leva menos de 5 minutos para consultar suas dívidas.</p>
+  <a href="#" class="btn-cta">Consultar meu CPF grátis →</a>
+  <div class="cta-channels">
+    <button class="channel-btn">📱 Pelo aplicativo</button>
+    <button class="channel-btn">💬 Via WhatsApp</button>
+    <button class="channel-btn">🏢 Nos Correios</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Serasa <span>Limpa Nome</span></div>
+  <div class="footer-links">
+    <a href="#">Sobre nós</a>
+    <a href="#">FAQ</a>
+    <a href="#">Segurança</a>
+    <a href="#">Parceiros</a>
+    <a href="#">Blog</a>
+    <a href="#">Atendimento</a>
+    <a href="#">Termos de uso</a>
+    <a href="#">Privacidade</a>
+  </div>
+  <hr class="footer-divider">
+  <p>© 2026 LimpaNome. Página demonstrativa · Não é afiliada ao Serasa Experian.</p>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     MODAL DE PAGAMENTO PIX — ElitePay
+══════════════════════════════════════ -->
+<div id="pix-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(18,35,63,0.7);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div id="pix-modal" style="background:#fff;border-radius:24px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.3);animation:popIn .35s ease both;">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#c4005f,#e80070);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-family:Nunito,sans-serif;font-weight:900;font-size:18px;color:#fff;">Pagamento via Pix</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:2px;">Powered by ElitePay</div>
+      </div>
+      <button onclick="fecharPagamento()" style="background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:36px;height:36px;font-size:20px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:28px;">
+
+      <!-- Resumo da cobrança -->
+      <div style="background:#f5f7fa;border-radius:14px;padding:18px 20px;margin-bottom:22px;border:1.5px solid #dde3ed;">
+        <div style="font-size:12px;color:#5a6475;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;">Resumo da negociação</div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;">
+          <span style="color:#5a6475;">Credor</span>
+          <span id="pay-credor" style="font-family:Nunito,sans-serif;font-weight:800;color:#12233f;"></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;">
+          <span style="color:#5a6475;">Dívida original</span>
+          <span id="pay-original" style="text-decoration:line-through;color:#5a6475;"></span>
+        </div>
+        <div style="border-top:1px solid #dde3ed;margin:10px 0;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-family:Nunito,sans-serif;font-weight:800;font-size:15px;color:#12233f;">💳 Taxa de negociação</span>
+          <span id="pay-valor-final" style="font-family:Nunito,sans-serif;font-weight:900;font-size:22px;color:#00b050;"></span>
+        </div>
+      </div>
+
+      <!-- Estados do pagamento -->
+      <div id="pay-state-loading" style="text-align:center;padding:20px 0;">
+        <div style="font-size:40px;margin-bottom:12px;">⏳</div>
+        <div style="font-family:Nunito,sans-serif;font-weight:800;font-size:16px;color:#12233f;">Gerando seu Pix...</div>
+        <div style="font-size:13px;color:#5a6475;margin-top:6px;">Conectando à ElitePay</div>
+        <div style="margin-top:16px;height:4px;background:#f0f0f0;border-radius:4px;overflow:hidden;">
+          <div id="pay-progress-bar" style="height:100%;background:linear-gradient(90deg,#e80070,#e80070);border-radius:4px;width:0%;transition:width 2s ease;"></div>
+        </div>
+      </div>
+
+      <div id="pay-state-pix" style="display:none;">
+        <div style="text-align:center;margin-bottom:18px;">
+          <div id="pay-qrcode" style="width:200px;height:200px;margin:0 auto 14px;background:#f5f7fa;border-radius:16px;border:2px solid #dde3ed;display:flex;align-items:center;justify-content:center;font-size:80px;">
+            <!-- QR gerado dinamicamente -->
+          </div>
+          <div style="font-size:13px;color:#5a6475;">Escaneie o QR Code com seu banco</div>
+          <div id="pay-timer" style="display:inline-block;background:#fff0f7;color:#e80070;font-family:Nunito,sans-serif;font-weight:800;font-size:13px;padding:4px 14px;border-radius:20px;margin-top:8px;border:1px solid #ffc0d9;">⏱ Expira em <span id="pay-countdown">10:00</span></div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <div style="font-size:12px;color:#5a6475;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;">Pix Copia e Cola</div>
+          <div style="display:flex;gap:8px;align-items:stretch;">
+            <div id="pay-copiacola" style="background:#f5f7fa;border:1.5px solid #dde3ed;border-radius:10px;padding:12px;font-size:11px;color:#5a6475;word-break:break-all;flex:1;line-height:1.5;font-family:monospace;"></div>
+            <button onclick="copiarPix()" style="background:var(--blue,#e80070);border:none;border-radius:10px;padding:0 16px;color:#fff;font-family:Nunito,sans-serif;font-weight:800;font-size:13px;cursor:pointer;white-space:nowrap;min-width:80px;" id="btn-copiar">📋 Copiar</button>
+          </div>
+        </div>
+
+        <div style="background:#e6f7ee;border:1px solid #b6eed0;border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;">
+          <span style="font-size:18px;">✅</span>
+          <div style="font-size:13px;color:#1a5c35;line-height:1.5;">
+            Após o pagamento, <strong>seu nome é limpo em até 5 dias úteis</strong>. Você receberá a confirmação por e-mail.
+          </div>
+        </div>
+
+        <button onclick="simularConfirmacao()" style="width:100%;background:#f5f7fa;border:1.5px solid #dde3ed;border-radius:12px;padding:12px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;color:#5a6475;cursor:pointer;">
+          🔄 Já paguei — verificar pagamento
+        </button>
+      </div>
+
+      <div id="pay-state-success" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:64px;margin-bottom:16px;">🎉</div>
+        <div style="font-family:Nunito,sans-serif;font-weight:900;font-size:22px;color:#12233f;margin-bottom:8px;">Pagamento confirmado!</div>
+        <div style="font-size:14px;color:#5a6475;line-height:1.6;margin-bottom:20px;">Sua negociação foi registrada com sucesso. <br>Seu nome será limpo em <strong>até 5 dias úteis</strong>.</div>
+        <div style="background:#e6f7ee;border-radius:14px;padding:18px;margin-bottom:20px;">
+          <div style="font-size:12px;color:#5a6475;font-weight:700;letter-spacing:.5px;margin-bottom:10px;">COMPROVANTE</div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="color:#5a6475;">ID da transação</span>
+            <span id="pay-txid" style="font-family:monospace;font-weight:700;color:#12233f;font-size:12px;"></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;">
+            <span style="color:#5a6475;">Valor pago</span>
+            <span id="pay-comprovante-valor" style="font-family:Nunito,sans-serif;font-weight:900;color:#00b050;"></span>
+          </div>
+        </div>
+        <button onclick="fecharPagamento()" style="width:100%;background:#e80070;border:none;border-radius:14px;padding:14px;font-family:Nunito,sans-serif;font-weight:900;font-size:15px;color:#fff;cursor:pointer;">Fechar e voltar ao início</button>
+      </div>
+
+      <div id="pay-state-error" style="display:none;text-align:center;padding:16px 0;">
+        <div style="font-size:48px;margin-bottom:12px;">❌</div>
+        <div style="font-family:Nunito,sans-serif;font-weight:800;font-size:18px;color:#12233f;margin-bottom:8px;">Erro ao gerar Pix</div>
+        <div id="pay-error-msg" style="font-size:13px;color:#5a6475;margin-bottom:20px;line-height:1.5;"></div>
+        <button onclick="abrirPagamento()" style="width:100%;background:#e80070;border:none;border-radius:14px;padding:14px;font-family:Nunito,sans-serif;font-weight:900;font-size:15px;color:#fff;cursor:pointer;">Tentar novamente</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+#pix-modal-overlay.show { display:flex !important; }
+</style>
+
+<script>
+// ═══════════════════════════════════════════════════
+//  ELITEPAY — CONFIGURAÇÃO
+//  Substitua os valores abaixo com suas credenciais
+// ═══════════════════════════════════════════════════
+const ELITEPAY_CONFIG = {
+  apiKey:    'SUA_API_KEY_AQUI',          // ← cole sua API key da ElitePay
+  baseUrl:   'https://api.elitepaybr.com', // ElitePay
+  // valor: definido dinamicamente pelo resultado da negociação
+  descricao: 'Taxa de negociação - Limpa Nome',
+};
+// ═══════════════════════════════════════════════════
+
+let countdownInterval = null;
+
+function abrirPagamento() {
+  const overlay = document.getElementById('pix-modal-overlay');
+  overlay.style.display = 'flex';
+  // Preencher resumo
+  document.getElementById('pay-credor').textContent   = selectedCredor   || '—';
+  document.getElementById('pay-original').textContent = selectedOriginal  || '—';
+  document.getElementById('pay-valor-final').textContent = 'R$ ' + valorNegociado.toFixed(2).replace('.',',');
+  // Resetar estados
+  showPayState('loading');
+  // Animar barra de progresso
+  setTimeout(() => {
+    document.getElementById('pay-progress-bar').style.width = '100%';
+  }, 100);
+  // Gerar cobrança na ElitePay
+  gerarPixElitePay();
+}
+
+function fecharPagamento() {
+  document.getElementById('pix-modal-overlay').style.display = 'none';
+  clearInterval(countdownInterval);
+}
+
+// Fecha ao clicar fora do modal
+document.getElementById('pix-modal-overlay').addEventListener('click', function(e) {
+  if(e.target === this) fecharPagamento();
+});
+
+function showPayState(state) {
+  ['loading','pix','success','error'].forEach(s => {
+    document.getElementById('pay-state-'+s).style.display = s === state ? '' : 'none';
+  });
+}
+
+// ─── INTEGRAÇÃO ELITEPAY ───
+async function gerarPixElitePay() {
+  const nome = document.getElementById('inp-nome')?.value?.trim() || 'Cliente';
+  const cpf  = document.getElementById('inp-cpf')?.value?.replace(/\D/g,'') || '';
+
+  // Payload padrão — ajuste os campos conforme doc da ElitePay
+  const payload = {
+    amount:        valorNegociado,
+    description:   ELITEPAY_CONFIG.descricao,
+    payerName:     nome,
+    payerDocument: cpf,
+  };
+
+  try {
+    // Chama o backend que faz a autenticação e gera o Pix
+    const res = await fetch(`${ELITEPAY_CONFIG.backendUrl}/gerar-pix`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if(!res.ok) {
+      const err = await res.json().catch(()=>({}));
+      throw new Error(err.message || `Erro ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    const qrCodeText = data?.qr_code || data?.pix?.qr_code || data?.copiaecola || data?.brcode || '';
+    const qrCodeImg  = data?.qr_code_base64 || data?.pix?.qr_code_base64 || data?.qrcode_image || '';
+    const txid       = data?.id || data?.txid || data?.transaction_id || ('LN' + Date.now());
+
+    exibirQrCode(qrCodeText, qrCodeImg, txid);
+
+  } catch(err) {
+    document.getElementById('pay-error-msg').textContent =
+      'Não foi possível gerar o Pix: ' + err.message + '. Tente novamente.';
+    showPayState('error');
+  }
+}
+
+function exibirQrCode(copiacola, imgBase64, txid) {
+  // QR Code visual
+  const qrEl = document.getElementById('pay-qrcode');
+  if(imgBase64) {
+    qrEl.innerHTML = `<img src="data:image/png;base64,${imgBase64}" style="width:100%;height:100%;border-radius:12px;object-fit:contain;" />`;
+  } else {
+    // Fallback: texto grande + ícone
+    qrEl.innerHTML = `<div style="text-align:center"><div style="font-size:64px">📱</div><div style="font-size:11px;color:#5a6475;margin-top:8px">QR via app do banco</div></div>`;
+  }
+  // Copia e cola
+  document.getElementById('pay-copiacola').textContent = copiacola || 'Código indisponível';
+  // Salvar txid para comprovante
+  document.getElementById('pay-txid').textContent = txid;
+  showPayState('pix');
+  iniciarContagem(600);
+}
+
+function exibirQrCodeDemo() {
+  // Modo demonstração enquanto a API key não está configurada
+  document.getElementById('pay-qrcode').innerHTML = 
+    `<div style="text-align:center;padding:10px">
+      <div style="font-size:48px">🔧</div>
+      <div style="font-size:11px;color:#5a6475;margin-top:6px;line-height:1.4">Cole sua<br>API key da ElitePay<br>para ativar</div>
+    </div>`;
+  document.getElementById('pay-copiacola').textContent = 'Configure ELITEPAY_CONFIG.apiKey para gerar o Pix real.';
+  document.getElementById('pay-txid').textContent = 'DEMO-' + Date.now();
+  showPayState('pix');
+  iniciarContagem(600);
+}
+
+function iniciarContagem(segundos) {
+  clearInterval(countdownInterval);
+  let restante = segundos;
+  function atualizar() {
+    const m = String(Math.floor(restante / 60)).padStart(2,'0');
+    const s = String(restante % 60).padStart(2,'0');
+    const el = document.getElementById('pay-countdown');
+    if(el) el.textContent = `${m}:${s}`;
+    if(restante <= 0) {
+      clearInterval(countdownInterval);
+      document.getElementById('pay-error-msg').textContent = 'O tempo para pagamento expirou. Gere um novo Pix.';
+      showPayState('error');
+    }
+    restante--;
+  }
+  atualizar();
+  countdownInterval = setInterval(atualizar, 1000);
+}
+
+function copiarPix() {
+  const txt = document.getElementById('pay-copiacola').textContent;
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = document.getElementById('btn-copiar');
+    btn.textContent = '✅ Copiado!';
+    setTimeout(() => btn.textContent = '📋 Copiar', 2500);
+  });
+}
+
+// Verificação de pagamento (polling ou webhook — aqui simula)
+async function simularConfirmacao() {
+  const txid = document.getElementById('pay-txid').textContent;
+
+  // Com ElitePay real, substitua por:
+  // const res = await fetch(`${ELITEPAY_CONFIG.baseUrl}/v1/charges/${txid}`, {
+  //   headers: { Authorization: `Bearer ${ELITEPAY_CONFIG.apiKey}` }
+  // });
+  // const data = await res.json();
+  // if(data.status === 'paid') { ... }
+
+  // Demonstração: confirma após 1.5s
+  await new Promise(r => setTimeout(r, 1500));
+  clearInterval(countdownInterval);
+  document.getElementById('pay-comprovante-valor').textContent = 'R$ ' + valorNegociado.toFixed(2).replace('.',',');
+  showPayState('success');
+}
+</script>
+
+</body>
+</html>
