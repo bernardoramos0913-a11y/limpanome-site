@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1329,9 +1328,9 @@ async function gerarPixElitePay() {
 
     const data = await res.json();
 
-    const qrCodeText = data?.qr_code || data?.pix?.qr_code || data?.copiaecola || data?.brcode || '';
-    const qrCodeImg  = data?.qr_code_base64 || data?.pix?.qr_code_base64 || data?.qrcode_image || '';
-    const txid       = data?.id || data?.txid || data?.transaction_id || ('LN' + Date.now());
+    const qrCodeText = data?.pix?.qrcode || data?.qr_code || data?.copiaecola || '';
+    const qrCodeImg  = data?.pix?.qr_code_base64 || data?.qr_code_base64 || '';
+    const txid       = data?.id || data?.txid || ('LN' + Date.now());
 
     exibirQrCode(qrCodeText, qrCodeImg, txid);
 
