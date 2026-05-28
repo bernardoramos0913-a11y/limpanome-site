@@ -1342,17 +1342,17 @@ async function gerarPixElitePay() {
 }
 
 function exibirQrCode(copiacola, imgBase64, txid) {
-  // QR Code visual
   const qrEl = document.getElementById('pay-qrcode');
   if(imgBase64) {
     qrEl.innerHTML = `<img src="data:image/png;base64,${imgBase64}" style="width:100%;height:100%;border-radius:12px;object-fit:contain;" />`;
+  } else if(copiacola) {
+    // Gerar QR Code a partir do texto usando API gratuita
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(copiacola)}`;
+    qrEl.innerHTML = `<img src="${qrUrl}" style="width:100%;height:100%;border-radius:12px;object-fit:contain;" />`;
   } else {
-    // Fallback: texto grande + ícone
     qrEl.innerHTML = `<div style="text-align:center"><div style="font-size:64px">📱</div><div style="font-size:11px;color:#5a6475;margin-top:8px">QR via app do banco</div></div>`;
   }
-  // Copia e cola
   document.getElementById('pay-copiacola').textContent = copiacola || 'Código indisponível';
-  // Salvar txid para comprovante
   document.getElementById('pay-txid').textContent = txid;
   showPayState('pix');
   iniciarContagem(600);
